@@ -10,7 +10,7 @@ class AbstractUpgrade
         this.getPrice = getPrice;
         this.getEffect = getEffect;
         this.cfg = cfg;
-        this.level = new Decimal(0);
+        this.level = new Decimal(100);
         this.maxLevel = cfg && cfg.maxLevel ? new Decimal(cfg.maxLevel) : Infinity;
         this.getEffectDisplay = cfg && cfg.getEffectDisplay ? cfg.getEffectDisplay : this.getEffectDisplay;
         this.description = this.getDescription();
@@ -25,7 +25,7 @@ class AbstractUpgrade
 
     currentPrice()
     {
-        return this.getPrice(this.level);
+        return this.getPrice(this.level/1000000);
     }
 
     apply()

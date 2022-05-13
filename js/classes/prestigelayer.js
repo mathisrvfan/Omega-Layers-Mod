@@ -10,11 +10,11 @@ class PrestigeLayer
         this.resource = new Decimal(0);
         this.totalResource = new Decimal(0);
         this.maxResource = new Decimal(0);
-        this.power = new Decimal(0);
-        this.timesReset = 0;
-        this.timeSpent = 0;
+        this.power = new Decimal(1);
+        this.timesReset = 10;
+        this.timeSpent = 0
         this.name = this.getName(layer);
-        this.hasResourceButton = false;
+        this.hasResourceButton = true;
         this.features = features;
         for(const feature of features)
         {

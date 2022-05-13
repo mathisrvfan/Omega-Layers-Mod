@@ -5,8 +5,8 @@ class Generator
         this.layer = layer;
         this.id = id; //nth generator, needed for upgrades
         this.generates = generates;
-        this.amount = new Decimal(0);
-        this.bought = new Decimal(0);
+        this.amount = new Decimal(1);
+        this.bought = new Decimal(1);
         this.name = name;
         this.initPrice = initPrice;
         this.priceIncrease = priceIncrease;
@@ -44,7 +44,7 @@ class Generator
             }
         }
         //individual generator boosts and multi boost
-        let f = new Decimal(3);
+        let f = new Decimal(10);
         for(const l of game.layers)
         {
             for(const upg of l.getAllUpgrades().filter(upg => (upg.type === UPGRADE_GENERATOR && upg.cfg.generators.includes(this.id)) || upg.type === UPGRADE_GENERATOR_TIMELAYER))
